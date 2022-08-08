@@ -3,19 +3,16 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context/context";
+import SearchInput from "./SearchInput";
 
 const Header = () => {
   let [open, setOpen] = useState(false);
+  const { cocktails, loading } = useGlobalContext();
   const searchValue = useRef();
   const { setSearchTerm } = useGlobalContext();
-  function searchCocktail() {
-    setSearchTerm(searchValue.current.value);
-  }
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
+
   return (
-    <div className="w-full relative">
+    <div className="w-full relative shadow-md">
       <div className="flex items-center justify-between max-w-[1200px] px-[2em] py-[1.5em]  mx-auto">
         <div>
           <Link to="/">
