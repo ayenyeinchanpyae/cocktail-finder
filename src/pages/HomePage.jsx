@@ -10,7 +10,7 @@ const HomePage = () => {
       <Banner />
       <Category />
       <Popular />
-      <Contact />
+      {/* <Contact /> */}
     </div>
   );
 };

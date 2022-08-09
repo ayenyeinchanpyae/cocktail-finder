@@ -65,56 +65,58 @@ export default function SingleCocktail() {
     const { name, image, category, info, glass, instructions, ingredients } =
       cocktail;
     return (
-      <div className="flex flex-col md:flex-row items-center justify-center mt-[50px]">
+      <div className="flex flex-col gap-y-16 md:flex-row items-center justify-center mt-[50px]">
         {/* <div className="flex items-center">
           <h2 className="">{name}</h2>
         </div> */}
-        <div className="md:w-1/2 lg:m-[5rem] md:m-[3rem] ">
+        <div className="md:w-1/2 lg:m-[5rem] md:m-[3rem] flex items-center justify-center ">
           <img
             src={image}
-            className="w-[400px] h-[400px] rounded-[5px]"
+            className="w-[300px] rounded-t-[150px] md:w-[400px] md:h-[400px] md:rounded-t-[200px]"
             alt={name}
           />
         </div>
-        <div className="md:w-1/2 flex flex-col space-y-[2rem]">
-          <p>{name}</p>
-          <p>
-            <span className="bg-yellow-100 text-yellow-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">
-              Category :
-            </span>
-            {category}
-          </p>
-          <p>
-            <span className="bg-yellow-100 text-yellow-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">
-              Info :
-            </span>{" "}
-            {info}
-          </p>
-          <p>
-            <span className="bg-yellow-100 text-yellow-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">
-              Glass :
-            </span>{" "}
-            {glass}
-          </p>
-          <p>
-            <span className="bg-yellow-100 text-yellow-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">
-              Instructions :
-            </span>{" "}
-            {instructions}
-          </p>
-          <p>
-            <span className="bg-yellow-100 text-yellow-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">
-              Ingredients :
-            </span>
-            {ingredients.map((item, index) => {
-              return item ? <span key={index}> {item}</span> : null;
-            })}
-          </p>
-          <Link to="/cocktails" className="btn btn-primary">
-            <button className="bg-orange-100 text-yellow-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">
-              Back
-            </button>
-          </Link>
+        <div className="md:w-1/2 flex items-center ">
+          <div className="flex flex-col space-y-[2rem]">
+            <p className="text-2xl font-semibold">{name}</p>
+            <p>
+              <span className="bg-yellow-100 text-yellow-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">
+                Category :
+              </span>
+              {category}
+            </p>
+            <p>
+              <span className="bg-yellow-100 text-yellow-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">
+                Info :
+              </span>{" "}
+              {info}
+            </p>
+            <p>
+              <span className="bg-yellow-100 text-yellow-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">
+                Glass :
+              </span>{" "}
+              {glass}
+            </p>
+            <p>
+              <span className="bg-yellow-100 text-yellow-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">
+                Instructions :
+              </span>{" "}
+              {instructions}
+            </p>
+            <p>
+              <span className="bg-yellow-100 text-yellow-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">
+                Ingredients :
+              </span>
+              {ingredients.map((item, index) => {
+                return item ? <span key={index}> {item}</span> : null;
+              })}
+            </p>
+            <Link to="/cocktails" className="btn btn-primary">
+              <button className="bg-orange-100 text-yellow-800 text-lg font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-900">
+                Back
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     );

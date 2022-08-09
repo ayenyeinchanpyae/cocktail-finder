@@ -16,16 +16,16 @@ const Header = () => {
       <div className="flex items-center justify-between max-w-[1200px] px-[2em] py-[1.5em]  mx-auto">
         <div>
           <Link to="/">
-            <p className="text-2xl font-bold">CheerUp!</p>
+            <p className="font-oleo text-3xl font-bold ">CheerUp!</p>
           </Link>
         </div>
         <div className="hidden md:block">
           <div className="flex justify-center space-x-[2em]">
             <Link to="/cocktails" className="flex justify-center">
-              Cocktails
+              <p className="font-playfair">Cocktails</p>
             </Link>
             <Link to={"/about"}>
-              <span>About US</span>
+              <p className="font-playfair">About Us</p>
             </Link>
           </div>
         </div>

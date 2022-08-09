@@ -1,20 +1,18 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import CocktailCard from "./CocktailCard";
-import PopularCard from "./PopularCard";
-
-const Popular = () => {
+import PopularCard from "../components/PopularCard";
+const Shot = () => {
   const [drink, setDrink] = useState([]);
+
   useEffect(() => {
     fetchDrinks();
   }, []);
-  console.log(drink);
+
   const fetchDrinks = async () => {
-    const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+    let url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=shot`;
     const response = await fetch(`${url}`);
     const data = await response.json();
-    const result = data.drinks.slice(3, 7);
-
+    const result = data.drinks.slice(1, 25);
     if (result) {
       const newCocktails = result.map((item) => {
         const { idDrink, strDrink, strDrinkThumb, strAlcoholic, strGlass } =
@@ -36,9 +34,7 @@ const Popular = () => {
 
   return (
     <div className="mb-8 xl:mb-16 mt-[50px]">
-      <p className="text-4xl text-yellow-900 font-garamond text-center mb-[50px]">
-        Weekly Top Popular Choices
-      </p>
+      <p className="text-4xl font-bold text-center mb-[50px]"></p>
       <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-x-8 gap-y-8">
         {drink.map((item) => {
           return <PopularCard key={item.id} {...item} />;
@@ -48,4 +44,4 @@ const Popular = () => {
   );
 };
 
-export default Popular;
+export default Shot;
